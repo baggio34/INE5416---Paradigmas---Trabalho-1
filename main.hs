@@ -4,8 +4,8 @@ import Data.Array
 matrix :: Array (Int, Int) Int
 matrix = listArray limits values
     where
-        limits = ((0, 5), (0, 5))          -- 6x6 matrix (row 0 to 5, column 0 to 5)
-        values = replicate 36 0
+        limits = ((0, 5), (0, 5))   -- 6x6 matrix (row 0 to 5, column 0 to 5)
+        values = replicate 36 -1
 
 -- to access the element at row 2 column 3:
 -- matrix ! (2, 3)

@@ -20,6 +20,9 @@ int sizesRigth[6] = {2, 2, 2, 1, 2, 2};
 
 bool validateCandidate(int value, int row, int column);
 
+// -------------------------------------------------------------------
+// ===================================================================
+// -------------------------------------------------------------------
 
 bool solve(int row, int col) {
     // stop condition, if it passed the last row, the puzzle is solved
