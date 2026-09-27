@@ -15,7 +15,7 @@ int matrix[6][6] = {
 int sizesTop[6] = {3, 3, 1, 2, 1, 3};
 int sizesBottom[6] = {2, 1, 4, 3, 5, 3};
 int sizesLeft[6] = {4, 3, 3, 3, 1, 2};
-int sizesRigth[6] = {2, 2, 2, 1, 2, 2};
+int sizesright[6] = {2, 2, 2, 1, 2, 2};
 
 
 bool validateCandidate(int value, int row, int column);
@@ -77,7 +77,7 @@ bool validateCandidate(int value, int row, int column) {
     int topRule = sizesTop[column];
     int bottomRule = sizesBottom[column];
     int leftRule = sizesLeft[row];
-    int rigthRule = sizesRigth[row];
+    int rightRule = sizesright[row];
 
     vector<int> validating;
 
@@ -140,11 +140,11 @@ bool validateCandidate(int value, int row, int column) {
 
 
 
-    if (rigthRule != 0 && column == 5) {
+    if (rightRule != 0 && column == 5) {
         int acc = 0;
         int currentBiggest = 0;
 
-        // validates rigth rule
+        // validates right rule
         for (int i = 5; i >= 0; i--) {
             int currentBuilding = (i == column) ? value : matrix[row][i];
 
@@ -152,10 +152,10 @@ bool validateCandidate(int value, int row, int column) {
                 currentBiggest = currentBuilding;
                 acc ++;
             }
-            if (acc > rigthRule) return false;
+            if (acc > rightRule) return false;
         }
 
-        if (acc != rigthRule) {
+        if (acc != rightRule) {
             return false;
         }
     }
@@ -167,7 +167,7 @@ bool validateCandidate(int value, int row, int column) {
         int acc = 0;
         int currentBiggest = 0;
 
-        // validates rigth rule
+        // validates right rule
         for (int i = 0; i < 6; i++) {
             int currentBuilding = (i == column) ? value : matrix[row][i];
 

@@ -1,4 +1,6 @@
 import Data.Array
+import Solve
+
 
 -- define bidimensional matrix
 matrix :: Array (Int, Int) Int
@@ -34,3 +36,10 @@ sizesBottom :: Array Int Int
 sizesBottom = listArray(0, 5) values
     where
         values = [ 2, 1, 4, 4, 5, 3 ]
+
+
+main :: IO ()
+main = do
+     -- IMPLEMENTAR
+     -- IMPLEMENTAR
+     -- IMPLEMENTAR
