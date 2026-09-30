@@ -12,13 +12,12 @@ validateCandidate matrix value row column =  -- define a função e nomeia os ar
     let tempMatrix = matrix // [((row, column), value)] 
     -- tempMatrix válida nas funções descritas
     -- invoca as duas validações com um E lógico
-    in unicidadeValida tempMatrix value row column && regrasVisibilidadeValidas tempMatrix row column
+    in unicidadeValida matrix value row column && regrasVisibilidadeValidas tempMatrix row column
     where
         -- função unicidadeValida e seus argumentos, matriz temporária, valor, linha e coluna
         unicidadeValida :: Array (Int, Int) Int -> Int -> Int -> Int -> Bool
         unicidadeValida tMat val row column
-            | val == 0  = True      -- se o valor for 0, retorna true, não é prédio
-            -- caso contrário, retorna not do elemento existir na linha ou na coluna atual
+            -- retorna not do elemento existir na linha ou na coluna atual
             | otherwise = not (elem val linhaAtual || elem val colunaAtual) 
             where
                 -- pega os valores da matriz temporária, fixando a linha atual e variando a coluna j de 0 a 5
@@ -78,7 +77,7 @@ validateCandidate matrix value row column =  -- define a função e nomeia os ar
 
                 -- lógica igual validarTop mas aplica na horizontal (linhas)
                 validaLeft = lRule == 0 || (accLeft <= lRule && (column /= 5 || accLeft == lRule))
-                    where accLeft = contaVisiveis [tMat ! (row, j) | j <- [0..c]]
+                    where accLeft = contaVisiveis [tMat ! (row, j) | j <- [0..column]]
 
                 -- igual a validaBottom mas na horizontal
                 validaRight = rRule == 0 || column /= 5 || (contaVisiveis [tMat ! (row, j) | j <- [5,4..0]] == rRule)
