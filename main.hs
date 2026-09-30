@@ -1,6 +1,6 @@
 import Data.Array
 import Solve
-
+import Pistas
 
 -- define bidimensional matrix
 matrix :: Array (Int, Int) Int
@@ -12,30 +12,6 @@ matrix = listArray limits values
 -- to access the element at row 2 column 3:
 -- matrix ! (2, 3)
 
-
--- starts the values that will rule the size of the skyscrappers
-sizesLeft :: Array Int Int
-sizesLeft = listArray (0, 5) values
-    where
-        values = [ 2,3,3,4,2,1 ]
-
-
-sizesRigth :: Array Int Int
-sizesRigth = listArray (0, 5) values
-    where
-        values = [ 2,4,2,3,1,4 ]
-
-
-sizesTop :: Array Int Int
-sizesTop = listArray(0, 5) values
-    where
-        values = [ 4,1,2,2,3,2 ]
-
-
-sizesBottom :: Array Int Int
-sizesBottom = listArray(0, 5) values
-    where
-        values = [1,3,5,2,4,2]
 
 -- transforma o tabuleiro em texto para ser impresso
 -- recebe a matriz e devolve uma string com uma linha do tabuleiro por linha de texto

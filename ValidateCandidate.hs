@@ -1,5 +1,5 @@
 module ValidateCandidate where
-
+import Pistas 
 import Data.Array
 
 -- validateCandidate recebe o tabuleiro, array bidimensional de ints indexado por int
@@ -48,12 +48,7 @@ validateCandidate matrix value row column =  -- define a função e nomeia os ar
             -- todas as 4 validações devem ser satisfeitas para o valor ser aceito
             validaTop && validaBottom && validaLeft && validaRight
             where
-                -- as regras do tabuleiro pré-fixadas
-                sizesTop    = array (0,5) [(0,3),(1,3),(2,1),(3,2),(4,1),(5,3)]
-                sizesBottom = array (0,5) [(0,2),(1,1),(2,4),(3,3),(4,5),(5,3)]
-                sizesLeft   = array (0,5) [(0,4),(1,3),(2,3),(3,3),(4,1),(5,2)]
-                sizesRight  = array (0,5) [(0,2),(1,2),(2,2),(3,1),(4,2),(5,2)]
-
+                
                 -- variáveis de regras recebem dos arrays de regras no index column/row
                 tRule = sizesTop    ! column   
                 bRule = sizesBottom ! column
